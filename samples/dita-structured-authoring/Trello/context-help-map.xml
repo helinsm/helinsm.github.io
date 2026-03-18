@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+   <appContext helpID="what_is_trello" path="Trello/what_is_trello.html"/>
+   <appContext helpID="kanban" path="Trello/kanban.html"/>
+   <appContext helpID="create_a_board" path="Trello/create_a_board.html"/>
+   <appContext helpID="trello_elements" path="Trello/trello_elements.html"/>
+   <appContext helpID="create_a_list" path="Trello/create_a_list.html"/>
+   <appContext helpID="create_a_card" path="Trello/create_a_card.html"/>
+   <appContext helpID="add_details_to_a_card" path="Trello/add_details_to_a_card.html"/>
+   <appContext helpID="card_properties" path="Trello/card_properties.html"/>
+   <appContext helpID="describe_your_card" path="Trello/describe_your_card.html"/>
+   <appContext helpID="assign_a_due_date" path="Trello/assign_a_due_date.html"/>
+   <appContext helpID="attach_files_to_a_card"
+               path="Trello/attach_files_to_a_card.html"/>
+   <appContext helpID="update_your_progress" path="Trello/update_your_progress.html"/>
+   <appContext helpID="create_a_checklist" path="Trello/create_a_checklist.html"/>
+   <appContext helpID="update_a_checklist" path="Trello/update_a_checklist.html"/>
+   <appContext helpID="convert_a_checklist_item_to_a_card"
+               path="Trello/convert_a_checklist_item_to_a_card.html"/>
+   <appContext helpID="comment_on_a_card" path="Trello/comment_on_a_card.html"/>
+   <appContext helpID="cardsandlists" path="Trello/cardsandlists.html"/>
+   <appContext helpID="move_a_card" path="Trello/move_a_card.html"/>
+   <appContext helpID="archive_a_card" path="Trello/archive_a_card.html"/>
+</map>

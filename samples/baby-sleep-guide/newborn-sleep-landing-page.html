@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep, Baby, Sleep | Newborn Sleep Guide for Modern Parents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF7F2;
+      --deep: #2A2420;
+      --sage: #7A9E7E;
+      --sage-light: #C8DFC9;
+      --blush: #E8C4B0;
+      --blush-light: #F7EDE7;
+      --terracotta: #C4714A;
+      --muted: #7A7068;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--deep);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(250, 247, 242, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(196, 113, 74, 0.1);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--deep);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--terracotta); font-style: italic; }
+    nav a.nav-cta {
+      background: var(--terracotta);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    nav a.nav-cta:hover { background: #A85C38; transform: translateY(-1px); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 48px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 52% 48%;
+      align-items: center;
+      gap: 48px;
+      width: 100%;
+      max-width: 1140px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -160px; right: -160px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--sage-light) 0%, transparent 70%);
+      opacity: 0.45;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, var(--blush) 0%, transparent 70%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .hero-text { position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blush-light);
+      border: 1px solid var(--blush);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 4vw, 3.8rem);
+      line-height: 1.1;
+      color: var(--deep);
+      margin-bottom: 14px;
+    }
+    h1 em { font-style: italic; color: var(--terracotta); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.72;
+      margin-bottom: 32px;
+      max-width: 440px;
+      font-weight: 400;
+    }
+    .hero-sub strong { color: var(--deep); font-weight: 700; }
+    .price-row {
+      display: flex; align-items: baseline; gap: 12px;
+      margin-bottom: 28px;
+    }
+    .price-main {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      color: var(--deep);
+    }
+    .price-old {
+      font-size: 1.1rem;
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+    .price-badge {
+      background: var(--sage);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cta-main {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--terracotta);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      transition: all 0.25s;
+      box-shadow: 0 8px 32px rgba(196, 113, 74, 0.32);
+      margin-bottom: 16px;
+    }
+    .cta-main:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(196, 113, 74, 0.42);
+      background: #A85C38;
+    }
+    .guarantee-line {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .guarantee-line svg { width: 14px; height: 14px; color: var(--sage); flex-shrink: 0; }
+
+    /* BOOK MOCKUP */
+    .hero-visual {
+      position: relative; z-index: 2;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .book-wrap {
+      position: relative;
+      animation: float 7s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: rotate(2deg) translateY(0); }
+      50% { transform: rotate(2deg) translateY(-14px); }
+    }
+    .book-mockup {
+      width: 360px; height: 460px;
+      background: linear-gradient(145deg, #F2E8DC 0%, #E6D6C4 100%);
+      border-radius: 6px 18px 18px 6px;
+      box-shadow: -6px 0 0 #C8B49A, -12px 0 0 #AE9A80,
+                  24px 36px 80px rgba(42,36,32,0.24);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 44px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .book-mockup::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--sage));
+    }
+    .book-icon { margin-bottom: 20px; }
+    .book-title-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.55rem;
+      line-height: 1.2;
+      color: var(--deep);
+      margin-bottom: 10px;
+    }
+    .book-title-text em { color: var(--terracotta); font-style: italic; }
+    .book-byline {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .book-stripe {
+      position: absolute; bottom: 28px;
+      display: flex; gap: 5px; justify-content: center;
+    }
+    .stripe-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+    }
+    .stripe-dot:nth-child(1) { background: var(--terracotta); opacity: 0.5; }
+    .stripe-dot:nth-child(2) { background: var(--sage); }
+    .stripe-dot:nth-child(3) { background: var(--terracotta); opacity: 0.5; }
+    .book-shadow-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .orb-1 { width: 80px; height: 80px; background: rgba(122,158,126,0.2); top: -20px; right: -20px; }
+    .orb-2 { width: 60px; height: 60px; background: rgba(196,113,74,0.15); bottom: -10px; left: -15px; }
+
+    /* PROOF STRIP */
+    .proof-strip {
+      background: var(--deep);
+      padding: 24px 80px;
+      display: flex; justify-content: center; align-items: center; gap: 48px;
+      flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.82rem;
+    }
+    .proof-item svg { width: 16px; height: 16px; color: var(--sage); flex-shrink: 0; }
+    .proof-item strong { color: white; font-weight: 700; }
+    .proof-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.12); }
+
+    /* PAIN SECTION */
+    .pain-section {
+      padding: 100px 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--terracotta);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .lead-text {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+      text-align: left;
+    }
+    .pain-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 28px;
+      border: 1px solid rgba(196, 113, 74, 0.08);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .pain-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 52px rgba(42,36,32,0.08);
+    }
+    .pain-card-icon {
+      width: 44px; height: 44px;
+      background: var(--blush-light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .pain-card-icon svg { width: 22px; height: 22px; color: var(--terracotta); }
+    .pain-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .pain-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+
+    /* CHAPTERS */
+    .chapters-section {
+      background: var(--deep);
+      padding: 100px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .chapters-section::after {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(122,158,126,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ch-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+    .chapters-section .section-label { color: var(--sage); }
+    .chapters-section h2 { color: white; }
+    .chapters-section .lead-text { color: rgba(255,255,255,0.58); margin: 0 0 60px; max-width: 520px; text-align: left; }
+    .chapter-list { display: flex; flex-direction: column; }
+    .chapter-row {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 22px 24px;
+      border-radius: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.18s;
+    }
+    .chapter-row:hover { background: rgba(255,255,255,0.04); }
+    .ch-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: rgba(255,255,255,0.12);
+      font-style: italic;
+    }
+    .ch-info h4 { color: white; font-size: 0.98rem; font-weight: 700; margin-bottom: 4px; }
+    .ch-info p { color: rgba(255,255,255,0.45); font-size: 0.81rem; line-height: 1.5; }
+    .ch-tag {
+      background: rgba(122,158,126,0.18);
+      color: var(--sage-light);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .ch-tag.accent { background: rgba(196,113,74,0.2); color: var(--blush); }
+
+    /* 5 S'S */
+    .method-section {
+      padding: 100px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .method-header { max-width: 540px; margin-bottom: 56px; }
+    .method-header .lead-text { margin-top: 16px; color: var(--muted); text-align: left; }
+    .five-s-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .s-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 20px 28px;
+      text-align: center;
+      border: 1.5px solid transparent;
+      transition: all 0.24s;
+    }
+    .s-card:hover {
+      border-color: var(--blush);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 56px rgba(42,36,32,0.09);
+    }
+    .s-card-icon {
+      width: 52px; height: 52px;
+      background: var(--blush-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .s-card-icon svg { width: 26px; height: 26px; color: var(--terracotta); }
+    .s-letter {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem;
+      color: var(--terracotta);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .s-word {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--deep);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .s-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+    /* WHAT'S INSIDE CALLOUT */
+    .inside-note {
+      margin-top: 52px;
+      background: var(--blush-light);
+      border-left: 4px solid var(--terracotta);
+      border-radius: 0 14px 14px 0;
+      padding: 24px 28px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .inside-note svg { width: 22px; height: 22px; color: var(--terracotta); flex-shrink: 0; margin-top: 2px; }
+    .inside-note p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .inside-note strong { color: var(--deep); }
+
+    /* BONUS */
+    .bonus-section {
+      background: var(--blush-light);
+      padding: 100px 80px;
+    }
+    .bonus-inner { max-width: 1000px; margin: 0 auto; }
+    .bonus-header { text-align: center; margin-bottom: 52px; }
+    .bonus-header .lead-text { max-width: 520px; margin: 12px auto 0; }
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .bonus-card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px 26px;
+      border: 1.5px dashed rgba(196,113,74,0.3);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .bonus-card:hover { border-color: var(--terracotta); transform: translateY(-4px); }
+    .bonus-card-icon {
+      width: 46px; height: 46px;
+      background: var(--blush-light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .bonus-card-icon svg { width: 24px; height: 24px; color: var(--terracotta); }
+    .bonus-card h4 { font-size: 0.94rem; font-weight: 700; margin-bottom: 8px; }
+    .bonus-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .bonus-value { font-size: 0.72rem; color: var(--sage); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 12px; }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(140deg, var(--deep) 0%, #3A2C28 100%);
+      padding: 120px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(122,158,126,0.12) 0%, transparent 65%);
+    }
+    .final-cta-inner { position: relative; z-index: 2; }
+    .final-cta h2 { color: white; margin-bottom: 16px; }
+    .final-cta .lead-text { color: rgba(255,255,255,0.58); max-width: 480px; margin: 0 auto 48px; }
+    .cta-box {
+      background: white;
+      border-radius: 24px;
+      padding: 44px 52px;
+      max-width: 440px;
+      margin: 0 auto;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+    }
+    .cta-box-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: var(--deep);
+      margin-bottom: 4px;
+    }
+    .cta-box-sub { font-size: 0.84rem; color: var(--muted); margin-bottom: 24px; }
+    .cta-box .price-row { justify-content: center; margin-bottom: 20px; }
+    .cta-box .price-main { font-size: 3rem; }
+    .feature-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .feature-list li {
+      padding: 7px 0;
+      font-size: 0.85rem;
+      color: var(--deep);
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid rgba(42,36,32,0.06);
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li svg { width: 16px; height: 16px; color: var(--sage); flex-shrink: 0; }
+    .cta-full {
+      display: block; width: 100%;
+      background: var(--terracotta);
+      color: white;
+      padding: 18px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.22s;
+      box-shadow: 0 8px 32px rgba(196,113,74,0.38);
+      margin-bottom: 14px;
+    }
+    .cta-full:hover { background: #A85C38; transform: translateY(-2px); }
+    .cta-note {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    .cta-note svg { width: 13px; height: 13px; color: var(--sage); }
+
+    /* FOOTER */
+    footer {
+      background: var(--deep);
+      padding: 36px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 14px;
+    }
+    footer p { color: rgba(255,255,255,0.35); font-size: 0.76rem; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.76rem; transition: color 0.18s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+
+    /* ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      .hero { padding: 90px 24px 52px; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .hero-sub { max-width: 100%; }
+      .price-row { justify-content: center; }
+      .guarantee-line { justify-content: center; }
+      .hero-visual { order: -1; }
+      .book-mockup { width: 240px; height: 320px; }
+      .proof-strip { padding: 20px 24px; gap: 20px; }
+      .proof-sep { display: none; }
+      .pain-section, .method-section { padding: 60px 24px; }
+      .lead-text { text-align: center; }
+      .pain-grid, .five-s-grid, .bonus-grid { grid-template-columns: 1fr; }
+      .chapters-section { padding: 60px 24px; }
+      .chapters-section .lead-text { text-align: center; }
+      .bonus-section { padding: 60px 24px; }
+      .final-cta { padding: 80px 24px; }
+      .cta-box { padding: 36px 28px; }
+      footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+      .chapter-row { grid-template-columns: 40px 1fr; }
+      .ch-tag { display: none; }
+      .method-header .lead-text { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Sleep, Baby, <span>Sleep</span></a>
+  <a href="#buy" class="nav-cta">Get the Guide</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+  <div class="hero-text fade-up">
+    <div class="hero-badge">Digital Guide for New Parents</div>
+    <h1>The First 90 Days<br>Don't Have to <em>Break</em> You</h1>
+    <p class="hero-sub">
+      A science-backed, <strong>no-judgment guide</strong> to newborn sleep — written for the modern parent who's read everything, tried everything, and is still up at 3am.
+    </p>
+    <div class="price-row">
+      <span class="price-main">$17</span>
+      <span class="price-old">$27</span>
+      <span class="price-badge">Launch Price</span>
+    </div>
+    <a href="#buy" class="cta-main">
+      <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+      </svg>
+      Download Instantly
+    </a>
+    <div class="guarantee-line">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      30-day money-back guarantee. No questions asked.
+    </div>
+  </div>
+  <div class="hero-visual fade-up">
+    <div class="book-wrap">
+      <div class="book-mockup">
+        <div class="book-shadow-orb orb-1"></div>
+        <div class="book-shadow-orb orb-2"></div>
+        <div class="book-icon">
+          <svg width="52" height="52" fill="none" stroke="#C4714A" viewBox="0 0 24 24" stroke-width="1.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <div class="book-title-text">Sleep,<br>Baby, <em>Sleep</em></div>
+        <div class="book-byline">A Modern Parent's Guide<br>to the First 90 Days</div>
+        <div class="book-stripe">
+          <div class="stripe-dot"></div>
+          <div class="stripe-dot"></div>
+          <div class="stripe-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end hero-inner -->
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+    <strong>35 pages</strong> of actionable guidance
+  </div>
+  <div class="proof-sep"></div>
+  <div class="proof-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+    <strong>Pediatrician-reviewed</strong> methods
+  </div>
+  <div class="proof-sep"></div>
+  <div class="proof-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <strong>Instant download</strong> — start tonight
+  </div>
+  <div class="proof-sep"></div>
+  <div class="proof-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+    <strong>3 bonus</strong> quick-reference cards
+  </div>
+</div>
+
+<!-- PAIN SECTION -->
+<section class="pain-section">
+  <p class="section-label">Sound familiar?</p>
+  <h2>You've Read Everything.<br>Nothing Is Working.</h2>
+  <p class="lead-text">You've gone down research rabbit holes at 3am. You're tracking feeds in an app. You've got a swaddle and a white noise machine. And somehow your baby still won't sleep more than 45 minutes at a stretch.</p>
+  <div class="pain-grid">
+    <div class="pain-card fade-up">
+      <div class="pain-card-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </div>
+      <h3>Information Overload</h3>
+      <p>Every source contradicts the last. You've read it all and now you're more confused — and more exhausted — than when you started.</p>
+    </div>
+    <div class="pain-card fade-up">
+      <div class="pain-card-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+      </div>
+      <h3>Scared to Do It Wrong</h3>
+      <p>You don't want to create bad habits or harm your baby's attachment. Every choice feels high-stakes when you're running on four hours of broken rest.</p>
+    </div>
+    <div class="pain-card fade-up">
+      <div class="pain-card-icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+      </div>
+      <h3>No Clear Roadmap</h3>
+      <p>Most resources are either 300-page books or vague social media posts. You need something practical, organized, and written for how tired you actually are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters-section">
+  <div class="ch-inner">
+    <p class="section-label">What's Inside</p>
+    <h2 style="color:white;">7 Chapters. One Clear Path.</h2>
+    <p class="lead-text">Everything you need to understand newborn sleep — and nothing that makes you feel like a failure for having a normal newborn.</p>
+    <div class="chapter-list">
+      <div class="chapter-row fade-up">
+        <div class="ch-num">01</div>
+        <div class="ch-info">
+          <h4>The Fourth Trimester Mindset</h4>
+          <p>Why the first 90 days are biologically unlike anything that follows, with realistic week-by-week expectations</p>
+        </div>
+        <span class="ch-tag">Foundation</span>
+      </div>
+      <div class="chapter-row fade-up">
+        <div class="ch-num">02</div>
+        <div class="ch-info">
+          <h4>The Science of Newborn Sleep</h4>
+          <p>Sleep cycles, wake windows, circadian rhythm development, and reading your baby's actual cues</p>
+        </div>
+        <span class="ch-tag">Science</span>
+      </div>
+      <div class="chapter-row fade-up">
+        <div class="ch-num">03</div>
+        <div class="ch-info">
+          <h4>The 5 S's — Your Soothing Toolkit</h4>
+          <p>A proven five-technique calming sequence — with real instructions, not just a list of concepts</p>
+        </div>
+        <span class="ch-tag accent">Most Read</span>
+      </div>
+      <div class="chapter-row fade-up">
+        <div class="ch-num">04</div>
+        <div class="ch-info">
+          <h4>Building a Sleep Foundation</h4>
+          <p>The Eat-Play-Sleep rhythm, drowsy-but-awake practice, and creating a sleep environment that actually works</p>
+        </div>
+        <span class="ch-tag">Practical</span>
+      </div>
+      <div class="chapter-row fade-up">
+        <div class="ch-num">05</div>
+        <div class="ch-info">
+          <h4>Nighttime Survival Guide</h4>
+          <p>Cluster feeding, dream feeds, shifting the longest stretch to night, and real partner strategies</p>
+        </div>
+        <span class="ch-tag accent">Fan Favorite</span>
+      </div>
+      <div class="chapter-row fade-up">
+        <div class="ch-num">06</div>
+        <div class="ch-info">
+          <h4>The 4-Month Sleep Regression — Prepare Now</h4>
+          <p>What's coming, why it happens, and how the habits you build today protect you when it hits</p>
+        </div>
+        <span class="ch-tag">Proactive</span>
+      </div>
+      <div class="chapter-row fade-up">
+        <div class="ch-num">07</div>
+        <div class="ch-info">
+          <h4>Taking Care of You</h4>
+          <p>Parental sleep deprivation, postpartum mental health, and permission to actually ask for help</p>
+        </div>
+        <span class="ch-tag">Wellness</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 S'S METHOD -->
+<section class="method-section">
+  <div class="method-header fade-up">
+    <p class="section-label">The Method</p>
+    <h2>Five Techniques.<br>One Calming Reflex.</h2>
+    <p class="lead-text">Newborns are born with a neurological "off switch" that's triggered by womb-like sensations. Chapter 3 teaches you exactly how to activate it — and how to layer all five techniques for maximum effect.</p>
+  </div>
+  <div class="five-s-grid">
+    <div class="s-card fade-up">
+      <div class="s-letter">S</div>
+      <div class="s-word">Swaddling</div>
+      <div class="s-desc">Firm, snug wrapping that recreates the contained feeling of the womb. Done correctly, it can calm a crying baby in under a minute.</div>
+    </div>
+    <div class="s-card fade-up">
+      <div class="s-letter">S</div>
+      <div class="s-word">Side/Stomach</div>
+      <div class="s-desc">For soothing only — this position turns off the startle reflex. Always back-to-sleep for unsupervised rest per AAP guidelines.</div>
+    </div>
+    <div class="s-card fade-up">
+      <div class="s-letter">S</div>
+      <div class="s-word">Shushing</div>
+      <div class="s-desc">Loud, low-frequency white noise — louder than you think. Inside the womb, blood flow was as loud as a running vacuum 24 hours a day.</div>
+    </div>
+    <div class="s-card fade-up">
+      <div class="s-letter">S</div>
+      <div class="s-word">Swinging</div>
+      <div class="s-desc">Small, fast, jiggly motion — not slow rocking. This mimics the constant movement babies experienced inside the womb for nine months.</div>
+    </div>
+    <div class="s-card fade-up">
+      <div class="s-letter">S</div>
+      <div class="s-word">Sucking</div>
+      <div class="s-desc">Pacifier or nursing activates a deep calming response. Layered with the other four, this completes the full soothing sequence.</div>
+    </div>
+  </div>
+  <div class="inside-note fade-up">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <p>This guide is <strong>for informational purposes only</strong> and is not a substitute for professional medical advice. Please consult your pediatrician for any concerns about your baby's health or development.</p>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus-section">
+  <div class="bonus-inner">
+    <div class="bonus-header fade-up">
+      <p class="section-label">Included Free</p>
+      <h2>3 Bonus Quick-Reference Cards</h2>
+      <p class="lead-text">Print them, stick them on the fridge, or keep them on your phone. Designed for foggy-brained parents at odd hours.</p>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card fade-up">
+        <div class="bonus-card-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4>Wake Windows by Age</h4>
+        <p>Exact wake window ranges from birth through 4 months, with the specific sleep cues to watch for at each stage.</p>
+        <div class="bonus-value">Included Free</div>
+      </div>
+      <div class="bonus-card fade-up">
+        <div class="bonus-card-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h4>5 S's Technique Checklist</h4>
+        <p>Step-by-step sequencing for the full soothing framework, with reminders on how to perform each technique correctly.</p>
+        <div class="bonus-value">Included Free</div>
+      </div>
+      <div class="bonus-card fade-up">
+        <div class="bonus-card-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </div>
+        <h4>Safe Sleep Setup Checklist</h4>
+        <p>AAP-based checklist for setting up the safest possible sleep environment for your newborn, room by room.</p>
+        <div class="bonus-value">Included Free</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="buy">
+  <div class="final-cta-inner">
+    <h2>Tonight Can Be Different.</h2>
+    <p class="lead-text">You don't need another 300-page book. You need a clear, warm, actionable guide written for exhausted modern parents — not sleep researchers.</p>
+    <div class="cta-box">
+      <div class="cta-box-title">Sleep, Baby, Sleep</div>
+      <div class="cta-box-sub">Instant PDF Download &middot; 35 Pages + 3 Reference Cards</div>
+      <div class="price-row">
+        <span class="price-main">$17</span>
+        <span class="price-old">$27</span>
+        <span class="price-badge">Launch</span>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          7-chapter newborn sleep guide (35 pages)
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Wake Windows Quick Reference Card
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          5 S's Checklist &amp; Soothing Sequence
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Safe Sleep Setup Checklist
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          Instant download — access in seconds
+        </li>
+      </ul>
+      <a href="#" class="cta-full">Get Instant Access &mdash; $17</a>
+      <div class="cta-note">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        30-day money-back guarantee &middot; Secure checkout
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Sleep, Baby, Sleep. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Refund Policy</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const siblings = Array.from(entry.target.parentElement.children);
+        const delay = siblings.indexOf(entry.target) * 90;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
